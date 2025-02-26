@@ -1,0 +1,17 @@
+#/etc/ppp/evdo-connect-chat 
+# chat script for China Mobile, used ETCOM CDMA module. 
+
+TIMEOUT     15
+ABORT       "DELAYED"
+ABORT       "BUSY"
+ABORT       "ERROR"
+ABORT       "NO DIALTONE"
+ABORT       "NO CARRIER"
+TIMEOUT     30
+''          \rAT
+OK          ATS0=0
+OK          ATE0V1
+OK          at\^prefmode=8
+OK          ATDT#777
+CONNECT     ''
+

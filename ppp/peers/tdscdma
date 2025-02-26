@@ -1,0 +1,15 @@
+#/opt/ppp/peers/tdscdma
+# Usage:   root>pppd call tdscdma
+/dev/tty3GCom
+9600
+crtscts
+modem
+debug
+nodetach
+usepeerdns
+noipdefault
+defaultroute
+user "card"
+password "card"
+0.0.0.0:0.0.0.0
+connect '/opt/ppp/chat -s -v -f /opt/ppp/tdscdma-chat'

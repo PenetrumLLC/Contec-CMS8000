@@ -1,0 +1,15 @@
+#/opt/ppp/peers/wcdma
+/dev/tty3GCom
+115200
+crtscts
+modem
+debug
+nodetach
+usepeerdns
+noipdefault
+defaultroute
+#noauth
+user	"card"
+password	"card"
+0.0.0.0:0.0.0.0
+connect '/opt/ppp/chat -s -v -f /opt/ppp/wcdma-chat'

@@ -1,0 +1,16 @@
+#/opt/ppp/wcdma-chat
+# chat script for WCDMA
+TIMEOUT         15
+ABORT           "DELAYED"
+ABORT           "BUSY"
+ABORT           "ERROR"
+ABORT           "NO DIALTONE"
+ABORT           "NO CARRIER"
+TIMEOUT         40 
+''              \rAT
+OK              ATZ\r
+OK              ATS0=1\r
+OK              ATE0Q0V1
+OK              AT+CGDCONT=1,"IP","3GNET",,0,0
+OK              ATDT*99#
+CONNECT \d\c

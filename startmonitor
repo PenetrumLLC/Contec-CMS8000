@@ -1,0 +1,22 @@
+cp /opt/bin/shutdown /tmp
+cp /opt/bin/shutdown.conf /tmp
+mkdir /dev/fb
+ln -s /dev/fb0 /dev/fb/0
+ln -s /dev/ttyTX0 /dev/ttyS4
+ln -s /dev/ttyTX1 /dev/ttyS5
+ln -s /dev/ttyTX2 /dev/ttyS6
+/sbin/ifconfig eth0 202.114.4.1
+/sbin/ifconfig rausb0 202.114.4.2 2>/dev/null 1>&2
+mount -t tmpfs none /opt/bin/data/freezedata -o size=1m
+cd /opt/bin
+./update_module
+./update_spo2
+./update
+./wifi_init
+cd /opt/Wireless
+./install.sh
+cd /tmp
+./shutdown &
+cd /opt/bin
+./cmddog &
+./monitor >/dev/null 2>&1 &

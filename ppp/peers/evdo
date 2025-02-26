@@ -1,0 +1,15 @@
+#/etc/ppp/peers/evdo 
+# Usage:   root>pppd call evdo 
+/dev/tty3GCom 
+9600
+crtscts
+modem
+debug
+nodetach
+usepeerdns
+noipdefault
+defaultroute
+user "card"
+password "card"
+0.0.0.0:0.0.0.0
+connect '/opt/ppp/chat -s -v -f /opt/ppp/evdo-connect-chat'
